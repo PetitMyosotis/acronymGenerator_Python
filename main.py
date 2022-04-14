@@ -2,15 +2,27 @@ import string
 
 print("Enter something (i will give you the acronym)")
 name = input()
-nameArray = []
-nameArray = name.split(" ")
-arrayLen = len(nameArray)
-iteration = 0
-arrayFistLetter = []
-for i in range(arrayLen):
-    firstLetter = nameArray[iteration][:1]
-    arrayFistLetter.append(firstLetter)
-    print(arrayFistLetter[iteration].upper(), end=".")
-    iteration = iteration + 1
+
+
+def accro_generator(text):
+    name_array = []
+    name_array = name.split(" ")
+    array_len = len(name_array)
+    iteration = 0
+    array_first_letter = []
+    for i in range(array_len):
+        first_letter = name_array[iteration][:1]
+        array_first_letter.append(first_letter)
+        iteration = iteration + 1
+    array_first_letter = ''.join(array_first_letter)
+    array_first_letter = array_first_letter.upper()
+    return array_first_letter
+
+
+result = accro_generator(name)
+
+print(result)
+
+
 
 
